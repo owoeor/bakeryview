@@ -1,0 +1,165 @@
+/* 모바일 css */
+#wrap {
+  text-align: center;
+}
+
+.info {
+  height: 19px;
+}
+.info a{
+  text-decoration: none;
+}
+#info_logo {
+  float: left;
+  color: #c65353;
+  font-weight: bold;
+  font-family: orbitron;
+}
+
+.info_right {
+  float: right;
+}
+.info_right img{
+
+}
+header {
+  margin: 0 auto;
+  padding-bottom: 5px;
+  width: 100%;
+  height: 70px;
+}
+
+.logo {
+  height: 100px;
+  padding-top: 70px;
+  margin: 0 auto;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: orbitron;
+  color: #c65353;
+}
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+.logo_desc {
+  padding-left: 150px;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: Berkshire Swash;
+}
+
+main{
+  padding-top: 80px;
+}
+
+.search{
+  display: block;
+  width: 100%;
+}
+
+input[type="search"]{
+  text-align: center;
+  padding-left: 13px;
+  width: 70%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 16px;
+}
+
+.cycle-slideshow img{
+  padding-top: 70px;
+  width: 100%;
+}
+
+
+footer{
+  padding-top: 30px;
+  height: 30px;
+}
+
+.footer{
+  font-size: 12px;
+  font-size: 0.75rem;
+
+}
+
+
+/* PC용 css */
+@media all and (min-width:960px){
+  #wrap {
+    text-align: center;
+  }
+
+  .info {
+    height: 19px;
+  }
+
+  #info_logo {
+    float: left;
+    color: #c65353;
+    display: none;
+  }
+
+  .info_right {
+    float: right;
+  }
+
+  header {
+    margin: 0 auto;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 70px;
+  }
+
+  .logo {
+    padding-top: 5px;
+    margin: 0 auto;
+    font-size: 48px;
+    font-size: 3rem;
+    color: #c65353
+  }
+
+  .logo_desc {
+    padding-left: 180px;
+    font-size: 32px;
+    font-size: 2rem;
+  }
+
+  main{
+    padding-top: 30px;
+  }
+  .section{
+    text-align: center;
+    width: 100%;
+    height: 470px;
+  }
+  .search{
+  }
+
+  input[type="search"]{
+    text-align: center;
+    width: 70%;
+    height: 50px;
+    border-bottom: 1px solid #000;
+    font-size: 25px;
+    font-size: 1.6666rem;
+    padding-left: 40px;
+  }
+  .cycle-slideshow {
+  }
+  .cycle-slideshow img{
+    padding-top: 30px;
+    height: 40%;
+  }
+  footer{
+    height: 20px;
+  }
+
+  .footer{
+
+   }
+
+}
