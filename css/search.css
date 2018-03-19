@@ -1,0 +1,40 @@
+/*모바일용 css */
+#wrap{
+  text-align: center;
+  width: 100%;
+}
+header{
+  margin-bottom: 40px;
+  padding-top: 10px;
+}
+.menu{
+  margin: 0 auto;
+  float: left;
+  display: inline-block;
+}
+.info_logo{
+  display: block;
+}
+.info_logo a{
+  clear: both;
+  padding-right: 40px;
+  text-decoration: none;
+  color: #c65353;
+  font-family: orbitron;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.search {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 80%;
+  border-bottom: 1px solid #000;
+}
+
+input[type="search"]{
+  width: 100%;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+}
