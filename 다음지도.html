@@ -1,0 +1,65 @@
+지도api 자바스크립트 키
+34763e5cc28b9ab1b7665b9996661eab
+
+로드뷰 지도 토글
+http://apis.map.daum.net/web/sample/roadviewToggle/
+
+베이커리이름,위도,경도
+ex) 윤하섭베이커리,35.247126, 129.087515
+
+위도경도 찾기
+http://www.iegate.net/maps/rgeogoogle.php
+
+전화걸기
+http://widbee.tistory.com/278
+onclick으로 로케이션하는법도 참고
+
+파일업로드
+ 업로드하는쪽
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+</head>
+<body>
+<form enctype="multipart/form-data" action="1.php" method="POST">
+ <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+ <input name="userfile" type="file" />
+ <input type="submit" value="upload" />
+</form>
+</body>
+</html>
+
+ 업로드받는쪽
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<?php
+<!-- 설정을 runtime(php가실행되는시점)으로 지정 / display_errors를   -->
+ini_set("display_errors", "1");
+<!--임시디렉토리를 파일디렉토리로 가능 경로를 지정하는것, file뒤에 \\ 꼭 -->
+$uploaddir = 'C:\BitNami\wampstack-5.4.20-0\apache2\htdocs\upload\file\\';
+<!--어떤 파일명으로 저장되는가 / 최종 경로 지정/ $_file은 지정된 변수 = 업로드한 자료  basename은 보안 = 업로드한 파일의 이름을 확실히 하게하기위해(파일의 역할만 하게)-->
+$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+echo '<pre>';
+<!--move_uploaded_file = 임시디렉토리에있는 파일을 원하는디렉토리로 이동/*php에서 저절로 오류를 파악해주는 함수 중요!!!* / 결과값 true(문제가없다) false(문제가있다) = if   tmp_name = 업로드 파일의 최초 임시디렉토리의 경로 -->
+if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+    echo "파일이 유효하고, 성공적으로 업로드 되었습니다.\n";
+} else {
+    print "파일 업로드 공격의 가능성이 있습니다!\n";
+}
+echo '자세한 디버깅 정보입니다:';
+<!-- print_r = var_dump -->
+print_r($_FILES);
+print "</pre>";
+?>
+<!-- 최종적으로 보여짐  file앞에 도메인이 업으므로 '상대경로'가된 = 동작하는 디렉토리의 하위에서 file네임 -->
+<img src="file/<?=$_FILES['userfile']['name']?>" />
+</body>
+</html>
+
+슬라이드
+http://fotorama.io/#birdwatcher__155e039d-00fc-4525-9c68-531a133cf7b7

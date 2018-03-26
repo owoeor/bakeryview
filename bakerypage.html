@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bakery view</title>
+  <link rel="stylesheet" href="css\cssreset.css">
+  <link rel="stylesheet" href="css\bakerypage.css">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Nanum+Brush+Script|Orbitron" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="js\bakerypage.js"></script>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</head>
+<body>
+ <div id="wrap">
+  <header>
+    <info>
+      <div class="info_logo">
+        <div class="menu">메뉴</div>
+        <a href="index.php">BakeryView</a></div>
+      <div class="search"><input type="search" placeholder="찾고싶은 베이커리는?"></div>
+    </info>
+    <div class="bakery">
+      <div class="bakeryname">
+          윤하섭베이커리
+      </div>
+      <p class="ceosay">
+       "윤하섭베이커리는 진정성있는 빵을 만듭니다"
+      </p>
+    </div>
+  </header>
+  <nav class="tab">
+    <ul class="toggle">
+      <li><a href="#"  id="toggle1">어디에있어?</a></li>
+      <li><a href="#" id="toggle2">어떤게맛있어?</a></li>
+      <li><a href="#" id="toggle3">다른건뭐있어?</a></li>
+   </div>
+  </nav>
+  <main>
+   <div id="content1" class="content">
+    <div class="item">케이크 건강빵</div>
+    <div class="map"><div id="map" style="width:70%;height:200px;"></div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=34763e5cc28b9ab1b7665b9996661eab"></script>
+    <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new daum.maps.LatLng(35.2412057,129.08486319999997), // 지도의 중심좌표
+            level: 5 // 지도의 확대 레벨
+        };
+
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new daum.maps.Map(mapContainer, mapOption);
+    // 마커가 표시될 위치입니다
+var markerPosition  = new daum.maps.LatLng(35.2412057,129.08486319999997);
+
+// 마커를 생성합니다
+var marker = new daum.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+    </script></div>
+    <div class="address"><span id="address">주소:  </span>부산 금정구 구서로 32-1</div>
+    <div class="panorama"><!-- 로드뷰를 표시할 div 입니다 -->
+    <div id="roadview" style="width:70%;height:200px;"></div>
+    <script>
+    var roadviewContainer = document.getElementById('roadview'); //로드뷰를 표시할 div
+    var roadview = new daum.maps.Roadview(roadviewContainer,
+    ); //로드뷰 객체
+    var roadviewClient = new daum.maps.RoadviewClient(); //좌표로부터 로드뷰 파노ID를 가져올 로드뷰 helper객체
+
+    var position = new daum.maps.LatLng(35.2412057,129.08486319999997);
+
+    // 특정 위치의 좌표와 가까운 로드뷰의 panoId를 추출하여 로드뷰를 띄운다.
+    roadviewClient.getNearestPanoId(position, 50, function(panoId) {
+        roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
+    });
+    </script></div>
+    <div class="tell"><span id="tell">전화번호:  </span><a href="tell:051-581-0022">051-581-0022</a></div>
+    <div class="hour"><span id="hour">영업시간:  </span>08:00~23:00</div>
+   </div>
+   <div id="content2" class="content">
+     <div>
+       <div class="content_info">사진을 클릭하면 더 많은 정보를 볼수있습니다</div>
+      <img src="https://cdn.pixabay.com/photo/2018/02/26/16/44/bird-3183441__340.jpg"  alt="">
+       <div class="bestitem1">
+        <div id="bestitem_name">소보루빵
+        </div>
+        <p id="bestitem_desc">소보루빵은 땅콩버터베이스의 토핑과 고소한 빵반죽이 좋은 빵</p>
+      </div>
+     </div>
+     <div>
+       <img  src="https://cdn.pixabay.com/photo/2018/02/26/16/30/eggs-3183410__340.jpg" alt="">
+       <div class="bestitem2">
+         <div id="bestitem_name">검정고무신</div>
+         <p id="bestitem_desc">검정고무신은 직접끓인팥과 일본산 고메버터가 조화를 이루는 빵입니다</p>
+       </div>
+     </div>
+     <div>
+       <img src="https://cdn.pixabay.com/photo/2018/02/28/10/05/love-3187623__340.jpg" alt="">
+       <div class="bestitem3">
+         <div id="bestitem_name">쇼콜라카라멜치즈케이크</div>
+         <p id="bestitem_desc">이 제품은....</p>
+       </div>
+     </div>
+   </div>
+   <div id="content3" class="content">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+     <img src="https://cdn.pixabay.com/photo/2016/06/29/04/39/wedding-dresses-1486005__340.jpg" alt="">
+   </div>
+  </main>
+  <div class="fb-comments" data-href="http://127.0.0.1/bakerypage.html" data-width="100%" data-numposts="5"></div>
+  <footer>
+    <a href="">개인정보처리방침</a>
+    <a href="">소개</a>
+  </footer>
+ </div>
+</body>
+</html>
